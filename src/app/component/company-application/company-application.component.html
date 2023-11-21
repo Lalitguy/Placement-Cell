@@ -1,0 +1,113 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body w-70">
+          <form #f="ngForm">
+            <h4 class="text-dark text-muted mb-4">Company Recruitment Notification</h4>
+
+            <!-- Company Information -->
+            <div class="mb-3">
+              <label for="companyName" class="form-label">*Company Name:</label>
+              <input type="text" class="form-control" id="companyName" name="companyName" ngModel required>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="jobTitle" class="form-label">*Job Title:</label>
+              <input type="text" class="form-control" id="jobTitle" name="jobTitle" required ngModel>
+            </div>
+
+            <div class="mb-3">
+              <label for="jobDescription" class="form-label">*Job Description:</label>
+              <textarea class="form-control" id="jobDescription" name="jobDescription" rows="4" ngModel required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="jobLocation" class="form-label">*Job Location:</label>
+              <input type="text" class="form-control" id="jobLocation" name="jobLocation" ngModel required>
+            </div>
+
+            <!-- Salary and Benefits -->
+            <div class="mb-3">
+              <label for="salary" class="form-label">*Salary Package:</label>
+              <input type="number" class="form-control" id="salary" name="salaryPackage" ngModel required>
+            </div>
+
+            <div class="mb-3">
+              <label for="benefits" class="form-label">Benefits:</label>
+              <textarea class="form-control" id="benefits" name="benefits" rows="3" ngModel ></textarea>
+            </div>
+
+            <!-- Educational Requirements -->
+            <div class="mb-3">
+              <label for="educationRequirements" class="form-label">Educational Requirements:</label>
+              <input type="text" class="form-control" id="educationRequirements" name="educationRequirements" ngModel>
+            </div>
+
+            <!-- Experience Requirements -->
+            <div class="mb-3">
+              <label for="experienceRequirements" class="form-label">Experience Requirements:</label>
+              <input type="text" class="form-control" id="experienceRequirements" name="experienceRequirements" ngModel> 
+            </div>
+
+            <!-- Application Deadline -->
+            <div class="mb-3">
+              <label for="applicationDeadline" class="form-label">Application Deadline:</label>
+              <input type="date" class="form-control" id="applicationDeadline" name="applicationDeadline" required ngModel>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mb-3">
+              <label for="contactEmail" class="form-label">*Contact Email:</label>
+              <input type="email" class="form-control" id="contactEmail" name="contactEmail" ngModel required>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactPhone" class="form-label">Contact Phone:</label>
+              <input type="tel" class="form-control" id="contactPhone" name="contactPhone" ngModel required>
+            </div>
+
+            <div class="mb-3">
+              <label for="companyWebsite" class="form-label">Company Website:</label>
+              <input type="url" class="form-control" id="companyWebsite" name="companyWebsite" ngModel>
+            </div>
+
+            <!-- Application Process -->
+            <div class="mb-3">
+              <label for="applicationProcess" class="form-label">Application Process:</label>
+              <textarea class="form-control" id="applicationProcess" name="applicationProcess" rows="4" ngModel ></textarea>
+            </div>
+
+            <!-- Application Instructions -->
+            <div class="mb-3">
+              <label for="applicationInstructions" class="form-label">Application Instructions:</label>
+              <textarea class="form-control" id="applicationInstructions" name="applicationInstructions" rows="4" ngModel></textarea>
+            </div>
+
+            <!-- Date & Time for Schedule -->
+            <div class="mb-3">
+              <label for="applicationDateTime" class="form-label">*Date & Time for Schedule:</label>
+              <input type="datetime-local" class="form-control" id="applicationDateTime" name="applicationDateTime"  ngModel required>
+            </div>
+
+            <!-- Application Form Attachment -->
+            <div class="mb-3">
+              <label for="applicationFileAttachment" class="form-label">Application File Attachment:</label>
+              <input type="file" class="form-control" name="applicationFileAttachment" (change)="onFileSelected($event)">
+            </div>
+
+            <!-- Additional Questions -->
+            <div class="mb-3">
+              <label for="additionalQuestions" class="form-label">Additional Questions:</label>
+              <textarea class="form-control" id="additionalQuestions" name="additionalQuestions" rows="4" ngModel></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" (click)="addCompanyDetails(f)">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      Chat
+   </div>
+   <div class="page__content shadow position-relative">
+      <div class="page__content-data position-relative " #scrollFeed>
+
+         <div class="feed">
+         
+            <div *ngFor="let message of messages" class="m-2 d-flex message" >
+               <!--<span>Message: {{message.message}}</span><br>
+               <span>Time: {{message.timesent}}</span>-->
+               <!--<app-message [chatMessage]=message></app-message>-->
+               <app-message [chatMessage]=message></app-message>
+            </div>
+         </div>
+
+         <div class="inputrow">
+         <div class="position-sticky f-flex bottom-0 sticky-bottom">
+            <input
+            class="chatInput"
+            [(ngModel)]="newMessage"
+            (keydown)="handleSubmit($event)"
+            />
+
+            <button class="chatButton"
+               (click)="send()"><mat-icon>send</mat-icon></button>
+         </div>
+        </div>
+
+
+      </div>
+   </div>
+</div>

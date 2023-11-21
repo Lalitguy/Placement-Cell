@@ -1,0 +1,214 @@
+@import 'src/styles.scss';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Poppins:wght@100&family=Roboto:wght@100&display=swap');
+
+
+
+.imgsize {
+   width: 96vw;
+   margin: 2vw;
+}
+.navbar{
+   background-color: black;
+}
+.navbar-nav{
+   li{
+      margin-right: 5px;
+      margin-left: 5px;
+   }
+}
+.slider {
+   width: 100vw;
+position: relative;
+  padding: 7.5rem 0;
+  overflow: hidden;
+  background: linear-gradient(to right, #002db3, #0033CC);
+  z-index: 1; 
+}
+.my-ba{
+   
+   img{
+      height: 500px;
+      @include md{
+
+         height: 200px;
+      }
+   }
+}
+.nav-item{
+   &:hover{
+      scale: 1.1;
+   }
+}
+.main-wrapper{
+   display: flex;
+   
+}
+.content {
+   
+   color: white;
+   p {
+      color:white;
+    
+      font-weight: 150;
+      margin-top: 70px;
+      font-size: 20px;
+      @include md{
+         font-size: 11px;
+      }
+   }
+
+}
+.register-button{
+   text-decoration: none;
+   display: inline;
+   font-size: 25px;
+   border-radius: 5px ;
+   padding: 5px;
+   border: 2px solid white;
+   color: white;
+   background-color: #002db3;
+   &:hover{
+      color: #002db3;
+      scale: 1.1;
+      background-color: white;
+   }
+}
+
+
+/*sliderends*/
+
+.section-1{
+   display: flex;
+   @include md{
+      flex-direction: column;
+   }
+}
+.why-img{
+  
+   margin-left: 10vw;
+   margin-top: 5rem;
+   @include md{
+      margin-left: 10vw;
+      margin-top: 1rem;
+   }
+   img {
+      width: 40vw;
+      height: auto;
+      @include md{
+         width: 70vw;
+      }
+   }
+}
+.why-steps{
+   margin-top: 10rem;
+   margin-left: 5rem;
+   @include md{
+      margin-top: 2rem;
+      margin-left: 3rem;
+   }
+}
+li {
+   b{
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 2rem;
+      &:hover{
+         font-size: 2.2rem;
+         color: #002db3;
+         @include md{
+            font-size: 1.2 rem;
+         }
+      }
+      @include md{
+         font-size: 1rem;
+      }
+   }
+   p{
+      font-family: 'Roboto', sans-serif;
+   }
+}
+
+/*info*/
+.info{
+   margin-top: 5rem;
+   display: flex;
+   justify-content: space-around;
+   margin-right: 20vw;
+   margin-left: 20vw;
+   font-size: 24px;
+   .info-box{
+      padding: 10px 50px 10px 50px;
+
+      border: 1px solid rgb(74, 74, 74);
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(244, 244, 244);
+      border-radius: 5px;
+      &:hover{
+         scale: 1.1;
+         border: 1px dashed grey;
+         b{
+            color: #002db3;
+         }
+
+      }
+   }
+}
+.company-text{
+   margin-left: 3vw;
+}
+.full-cover{
+   width: 100vw;
+}
+.company-slider-cover{
+   overflow-x: scroll;
+   margin-top: 1rem;
+   background-color: rgb(245, 245, 245);
+   padding: 10px;
+   
+   min-width: 100%;
+   width: auto;
+}
+.company-slider{
+   
+   display: flex;
+   // overflow-x: scroll;
+   animation: slide 10s infinite;
+   img{
+      margin: 5px;
+      height: 100px;
+      width: auto;
+   }
+   
+}
+@keyframes slide {
+   0% {
+      transform: translateX(0);
+   }
+   50% {
+      transform: translateX(-50%);
+      
+   }
+   100% {
+      transform: translateX(0);
+   }
+}
+
+footer{
+   margin-top: 50px;
+   background-color: black;
+   font-family: 'Poppins', sans-serif;
+   height: 150px;
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   div{
+      padding: 10px;
+      div{
+         &:hover{
+            scale: 1.1;
+         }
+      }
+   }
+}
+

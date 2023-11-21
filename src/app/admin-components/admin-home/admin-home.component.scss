@@ -1,0 +1,89 @@
+@import 'src/styles.scss';
+
+.page {
+   color: white;
+   padding: 0 1rem;
+   background: #f1f5f9;
+   @include md {
+      width : 100vw;
+  }
+}
+.page__box {
+   min-height: 120px;
+   background: #49215a;
+   margin: 0 -1rem;
+   font-size: 36px;
+    color: white;
+    @include md {
+      font-size: 26px;
+  }
+}
+.page__content {
+   // min-height :calc(100vh - 178px);
+
+   display: flex;
+   justify-content: center;
+   //align-items: center;
+   border-radius: 10px;
+   margin-top: -2rem;
+   background: white;
+   color: black;
+   font-size: 2rem;
+   height: 1000px;
+   @include md {
+      height: 500px;
+      font-size: 0.5rem;
+  }
+}
+.page__content-data {
+   padding-top: 50px;
+   overflow-x: scroll;
+   padding-left: 10px;
+  
+   // left: 50%;
+   // transform: translate(-50px, -50%);
+   //background-color: orange;
+}
+.row1{
+   width: 70vw;
+   display: flex;
+   justify-content: row;
+   justify-content: space-between;
+   align-items: baseline;
+}
+table {
+  font-size: 20px;
+  width: 100%;
+  
+  @include md {
+   font-size: 0.8rem;
+   
+}
+}
+table, th, td {
+   
+   border: 3px solid black;
+   @include md{
+      border: 2px solid black;
+   }
+}
+.fetchbtn{
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   margin: 7px;
+   border-radius: 3px;
+   background-color: white;
+   border: rgb(232, 232, 232);
+   display: flex;
+   &:hover{
+      scale: 1.05;
+   }
+   @include md{
+      font-size: medium;
+      line-height: small;
+   }
+}
+select{
+   @include md{
+      font-size: small;
+   }
+}

@@ -1,0 +1,15 @@
+<div class="messageContainer"
+    [ngClass]="{'isOwnMessageContainer':isOwnMessage}">
+    <div class="messageData"
+        [ngClass]="{'isOwnMessageData':isOwnMessage}">
+        <span class="email"
+            [ngClass]="{'isOwnEmail':isOwnMessage}">
+            {{ userEmail | slice:0 : userEmail.indexOf("@") }}
+        </span>
+        
+    </div>
+    <div class="messageContent"
+        [ngClass]="{'isOwnMessageContent':isOwnMessage}">
+        {{ messageContent }}
+    </div>
+</div>

@@ -1,0 +1,84 @@
+@import 'src/styles.scss';
+
+.page {
+   color: white;
+   padding: 0 1rem;
+   background: #f1f5f9;
+   font-weight: 450;
+   padding-bottom: 5rem;
+   @include md {
+      width: 100vw;
+   }
+}
+
+.page__box {
+   min-height: 120px;
+   background: #4fa16d;
+   margin: 0 -1rem;
+   font-size: 36px;
+   color: white;
+
+   @include md {
+      font-size: 26px;
+   }
+}
+
+.page__content {
+   height: calc(100vh - 178px);
+   display: flex;
+   justify-content: center;
+   // min-height: auto;
+   border-radius: 10px;
+   margin-top: -2rem;
+   background: white;
+   color: black;
+   font-size: 1.5rem;
+
+   @include md {
+      font-size: 0.5rem;
+   }
+}
+
+.page__content-data {
+   padding-top: 50px;
+   overflow-x: scroll;
+   padding-left: 10px;
+   color: black;
+   &::-webkit-scrollbar{
+      width: 15px;
+      color: black;
+   }
+   /*top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);*/
+}
+.notificationDiv{
+   border: 2px solid black;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+   margin: 20px;
+   border-radius: 10px;
+   padding: 30px;
+   min-width: 50vw;
+   
+   @include md{
+      margin: 3px;
+      padding: 15px;
+      font-size: medium;
+   }
+}
+span{
+   margin-left: 30px;
+   padding: 2px 4px;
+   background-color: #bcbfc3;
+   border-radius: 5px;
+}
+.notificationText{
+   border: 1px solid grey;
+   border-radius: 5px;
+   min-height: 100px;
+   text-align: justify;
+   @include md{
+      min-height: 50px;
+
+   }
+}

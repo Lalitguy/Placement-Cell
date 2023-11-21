@@ -1,0 +1,24 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      My Notifications
+   </div>
+   <div class="page__content shadow  ">
+      <div class="page__content-data position-relative text-center">
+
+     
+            <div *ngFor="let notification of notificationFeed" class="notificationDiv">
+               
+               <p>
+                  <span>{{(notification.timestamp).toDate().toLocaleDateString()}}</span>
+                  <span>{{(notification.timestamp).toDate().toLocaleTimeString()}}</span>
+               </p>
+               <p class="notificationText">
+                  <b>Notification:</b>
+
+                  {{ notification.text}}
+               </p>
+            </div>
+         
+      </div>
+   </div>
+</div>

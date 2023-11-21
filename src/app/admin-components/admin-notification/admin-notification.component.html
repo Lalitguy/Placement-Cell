@@ -1,0 +1,105 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      Send Private Notifications
+   </div>
+   <div class="page__content p-3 position-relative">
+      <div class="page__content-data position-relative text-center">
+
+         <mat-card class="shadow">
+            <mat-card-content>
+               <div class="admin-container">
+
+                  <div class="form-group">
+                     <label for="notificationText">Notification Text:</label>
+                     <textarea id="notificationText" class="form-control" [(ngModel)]="notificationText"
+                        name="notificationText" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                     <label for="recipientId">Recipient ID:</label>
+                     <input type="text" id="recipientId" class="form-control" [(ngModel)]="recipientId" name="recipientId" />
+                  </div>
+                  <button class="btn btn-primary my-2" (click)="sendNotification()"
+                     [disabled]="!notificationText || !recipientId">
+                     Send Notification
+                  </button>
+               </div>
+            </mat-card-content>
+         </mat-card>
+
+
+
+         <mat-card class="retrievingContainer">
+            <mat-card-content >
+               <div class="row1">
+                  <div>
+                     <label for="course">Course:</label>
+                     <select id="course" [(ngModel)]="selectedCourse">
+                        <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+                     </select>
+                  </div>
+
+                  <div>
+                     <label for="domain">Domain: </label>
+                     <select id="domain" [(ngModel)]="selectedDomain">
+                        <option *ngFor="let domain of domains" [value]="domain">{{ domain }}</option>
+                     </select>
+                  </div>
+
+                  <div>
+                     <label for="year">Year:</label>
+                     <select id="year" [(ngModel)]="selectedYear">
+                        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+                     </select>
+                  </div>
+
+                  <button (click)="retrieveData()" class="ml-3 retrievebtn">Retrieve Data</button>
+               </div>
+            </mat-card-content>
+         </mat-card>
+
+
+        <!-- <div *ngIf="documents">
+            <p>
+               Filtered Documents:
+            </p>
+            <ul>
+               <li *ngFor="let document of documents">
+                  <span>{{document.userID}}</span>
+               </li>
+            </ul>
+         </div>-->
+         <table *ngIf="showTable">
+            <tr>
+               <th>Student ID</th>
+               <th>Student Name</th>
+               <th>Interested Domain</th>
+               <th>Year</th>
+            </tr>
+
+            <tr *ngFor="let document of documents">
+               <td>
+                  <span (click)="copyToClipboard(document.userID)">{{document.userID}}</span>
+               </td>
+               <td>
+                  <span>
+                     {{document.name}}
+                  </span>
+               </td>
+               <td>
+                  <span>
+                     {{document.domain}}
+                  </span>
+               </td>
+               <td>
+                  <span>
+                     {{document.year}}
+                  </span>
+               </td>
+            </tr>
+         </table>
+
+
+
+      </div>
+   </div>
+</div>

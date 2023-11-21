@@ -1,0 +1,72 @@
+
+@import 'src/styles.scss';
+
+:host .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+.logo {
+  text-align: center;
+  padding: 2.6rem 1rem;
+}
+.logo img {
+    width: 200px;
+}
+.mat-divider {
+  border-top-width: 2px;
+  border-color: white;
+}
+.mat-list-item {
+  color: #94a3b8 !important;
+  font-size: 2rem;
+  height: 44px !important;
+  margin-bottom: 4px;
+}
+.mat-list-item:hover {
+    color: #f2f5f7 !important;
+    
+}
+
+.mat-list-item ::ng-deep .mat-list-item-content {
+      border-radius: 5px;
+      margin: 0 8px;
+}
+.mat-list-item ::ng-deep .mat-list-item-content:hover {
+        background: #6c4074 !important;
+}
+
+.list-item-active {
+
+  color: #f2f5f7 !important;
+}
+// .list-item-active:hover {
+
+//   // color: black !important;
+// }
+
+.list-item-active ::ng-deep .mat-list-item-content {
+      background: #6c4074 !important;
+}
+
+.list-item-active ::ng-deep .mat-list-item-content:hover {
+        background: #2c3344 !important;
+}
+.mat-subheader {
+  color: #818cf8;
+  font-size: 0.6rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+a{
+  font-size: 1.5rem;
+  @include md {
+    font-size: 1rem;
+}
+}
+a:hover{
+  @include lg {
+    background-color: #dcc2e0;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}

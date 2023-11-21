@@ -1,0 +1,15 @@
+@import 'src/styles.scss';
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include md{
+        padding: 0;
+    }
+}
+.col-4{
+    @include md{
+        width: 90vw;
+    }
+}

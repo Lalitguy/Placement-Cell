@@ -1,0 +1,48 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      Home
+   </div>
+   <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-relative text-center">
+
+         <div class="row1">
+         <button  type="submit" (click)="getAllDoc('email')" class="fetchbtn">Fetch All Students Data</button>
+         
+         <p> Sort:
+         <select [(ngModel)]="selectedSortOption" (change)="getAllDoc(selectedSortOption)">
+            
+            
+            <option value="year">Year-of-Study</option>
+            <option value="course">Course</option>
+            
+         </select>
+         </p>
+      </div>
+
+         <table>
+
+            <tr>
+               <th>Name</th>
+               <th>Student ID</th>
+               <th>Email</th>
+               <th>Gender</th>
+               <th>Course</th>
+               <th>year</th>
+            </tr>
+
+
+            <tr *ngFor="let docRow of docInfo">
+               <td><span>{{docRow.name}}</span></td>
+               <td><span>{{docRow.student_id}}</span></td>
+               <td><span>{{docRow.email}}</span></td>
+               <td><span>{{docRow.gender}}</span></td>
+               <td><span>{{docRow.course}}</span></td>
+               <td><span>{{docRow.year}}</span></td>
+            </tr>
+         </table>
+
+
+
+      </div>
+   </div>
+</div>

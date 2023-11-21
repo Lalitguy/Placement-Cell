@@ -1,0 +1,40 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      Home
+   </div>
+   <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-relative " #scrollFeed>
+
+
+         <div *ngFor="let message of messages" class="feed m-2 d-flex">
+            <!--<span>Message: {{message.message}}</span><br>
+                                                                              <span>Time: {{message.timesent}}</span>-->
+            <!--<app-message [chatMessage]=message></app-message>-->
+            <!--<div class="email">
+               <b>{{ message.email}}</b>
+            </div>
+            <div class="message">
+               {{ message.message}}
+            </div>-->
+            
+            <app-message [chatMessage]=message></app-message>
+
+
+         </div>
+         <div class="inputrow">
+            <div class="position-sticky f-flex bottom-0 sticky-bottom">
+               <input
+               class="chatInput"
+               [(ngModel)]="newMessage"
+               (keydown)="handleSubmit($event)"
+               />
+   
+               <button class="chatButton"
+                  (click)="send()"><mat-icon>send</mat-icon></button>
+            </div>
+           </div>
+
+      </div>
+
+   </div>
+</div>

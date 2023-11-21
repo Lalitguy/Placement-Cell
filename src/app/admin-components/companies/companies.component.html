@@ -1,0 +1,107 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      Companies
+   </div>
+   <div class="page__content shadow position-relative">
+      <div class="page__content-data position-relative text-center">
+
+
+         <div *ngFor="let company of companyFeed" class="companyDiv">
+
+            <div class="row1 align-items-center">
+               <span class="heading">Company Name: {{company.companyName }}</span>
+               <button (click)="openCalendar(company.applicationDateTime, company.jobDescription)" class="calenderbtn">
+                  <mat-icon>today</mat-icon>Add
+               </button>
+            </div>
+            <div class="row2">
+               <span class="bg">
+                  <mat-icon>mail</mat-icon >{{company.contactEmail }}
+               </span>
+               <span class="bg">
+                  <mat-icon> phone</mat-icon>{{company.contactPhone }}
+               </span>
+               <span class="bg">
+                  <mat-icon> business</mat-icon>{{company.companyWebsite }}
+               </span>
+
+
+            </div>
+
+            <div class="row2">
+               <div class="col1">
+                  <span class="w-100">
+                     <b>Job Title:</b> {{company.jobTitle }}
+                  </span>
+                  <span class="w-100">
+                     <b>Salary:</b> {{company.salaryPackage }}
+                  </span>
+                  <span class="w-100 d-flex align-items-start">
+                     <b>Education:</b> {{company.educationRequirements }}
+                  </span>
+               </div>
+               <div class="desc">
+                 
+                  <span class="w-auto"><b>Job Description:</b> </span>
+                  <P>{{company.jobDescription}}</P>
+
+               </div>
+            </div>
+            <div class="row2">
+               <span class="d-flex align-items-center">
+                  <mat-icon> place</mat-icon><b>Job location:</b> {{company.jobLocation }}
+               </span>
+               <button (click)="openFile(company.companyName + company.jobTitle)" class="filebtn"><mat-icon>description</mat-icon>open File</button>
+            </div>
+
+            <div class="row1">
+               <button (click)="toggleInfo(company)" class="morebtn">More Info...</button>
+               <button (click)="deleteEvent(company.companyName)" class="deletebtn">
+                  <mat-icon>delete</mat-icon>Delete application
+               </button>
+            </div>
+            <div class="col1" [hidden]="!company.showDetails">
+               <div class="row2 row3">
+                  <span class="w-100 d-flex align-items-start">
+                     <b >Meeting Date:</b> {{ company.applicationDateTime | slice: 0:10}}
+                  </span>
+                  <span class="w-100 d-flex align-items-start">
+                     <b>Meeting Time:</b> {{ company.applicationDateTime | slice: 11}}
+                  </span>
+
+               </div>
+               <div class="row2 row3">
+                  <span class="w-100 d-flex align-items-start">
+                     <b>Experience required:</b> {{ company.experienceRequirements}}
+                  </span>
+                  <span class="w-100 d-flex align-items-start">
+                     <b>Additional Instructions:</b> {{company.applicationInstructions }}
+                  </span>
+
+               </div>
+               <div class="row2 row3">
+                  <span class="w-100 d-flex align-items-start">
+                     <b>Benefits:</b> {{ company.benefits}}
+                  </span>
+                  <span class="w-100 d-flex align-items-start">
+                     <b>Application Deadline:</b> {{ company.applicationDeadline }}
+                  </span>
+
+               </div>
+               <div class="row2 row3">
+                  <span class="w-100 d-flex align-items-start">
+                     <b>process: </b>{{company.applicationProcess }}
+                  </span>
+                  <span class="w-100 d-flex align-items-start">
+                     <b>Additional Questions:</b> {{company.additionalQuestions}}
+                  </span>
+               </div>
+
+
+
+            </div>
+
+         </div>
+      </div>
+   </div>
+</div>

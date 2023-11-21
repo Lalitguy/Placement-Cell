@@ -1,0 +1,127 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      Schedule Events & Interviews
+   </div>
+   <div class="page__content p-3 position-relative">
+      <div class="page__content-data position-relative text-center">
+
+        
+            <mat-card class="container mt-5" class="formdiv">
+               <mat-card-content>
+                  <form #f="ngForm">
+                     <!-- Event Heading -->
+
+                     <div class="form-group row ">
+                        <label for="eventHeading" class="col mr-3 align-items-right"><b>Event Heading</b></label>
+                        <input type="text" class="form-control headinput col" id="eventHeading" placeholder="Enter Event Heading"
+                           name="eventHeading" ngModel required>
+                        <div class="invalid-feedback">
+                           Please provide an event heading.
+                        </div>
+                     </div>
+
+                     <!-- Event Description -->
+                     <div class="form-group row mt-2">
+                        <label for="eventDescription" class="col"><b>Event Description</b></label>
+                        <textarea type="text" class="form-control descinput col" id="eventDescription" rows="4"
+                           placeholder="Enter Event Description" name="eventDescription" ngModel required></textarea>
+                        <div class="invalid-feedback">
+                           Please provide an event description.
+                        </div>
+                     </div>
+
+                     <div class="form-group row mt-2">
+                        <label for="eventType" class="col"><b>Event Type</b></label>
+                        <select class="form-control typeinput col" name="eventType" required ngModel>
+                           <option value="" disabled selected>Select Event Type</option>
+                           <option value="Placement talk">Placement talk</option>
+                           <option value="GD round">GD round</option>
+                           <option value="Seminar">Seminar</option>
+                        </select>
+                        <div class="invalid-feedback">
+                           Please select an event type.
+                        </div>
+                     </div>
+                     <div class="form-group row mt-2">
+                        <input type="file" (change)="onFileSelected($event)">
+                     </div>
+
+                     <!-- Event ID -->
+                     <div class="row mt-2">
+                        <div class="form-group col">
+                           <label for="eventID"><b>Event ID</b></label>
+                           <input type="text" class="form-control idinput" id="eventID" placeholder="Enter Event ID"
+                              name="eventID" ngModel required>
+                           <div class="invalid-feedback">
+                              Please provide an event ID.
+                           </div>
+                        </div>
+
+                        <!-- Event Date -->
+                        <div class="form-group col">
+                           <label for="eventDateTime"><b>Event Date & Time</b></label>
+                           <input type="datetime-local" class="form-control dtinput" id="eventDateTime" name="eventDateTime"
+                              ngModel required>
+                           <div class="invalid-feedback">
+                              Please select a valid event date and time.
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- Submit Button -->
+                     <button type="submit" class="btn addbtn" (click)="addEvent(f)">Add Event</button>
+                  </form>
+               </mat-card-content>
+            </mat-card>
+         
+
+
+
+         <div class=" mt-5 ml-0">
+            <p>
+               <mat-icon> vertical_align_bottom</mat-icon>Events History
+               <mat-icon> vertical_align_bottom</mat-icon>
+            </p>
+            <div *ngFor="let event of eventsFeed" class="eventHistoryDiv mt-5">
+               <div class="mt-3 row1">
+                  <span class="eventHead"><b>  {{ event.eventHeading }} </b></span>
+                  <button mat-icon-button (click)="deleteEvent(event.eventID)" class="deletebtn">
+                     <mat-icon>delete</mat-icon>
+                  </button>
+               </div>
+               <div class="row1">
+                  <span>[ {{event.eventType}} ]
+                  </span>
+                  <span>
+                     <b>ID: </b>{{event.eventID}}
+                  </span>
+               </div>
+               
+               <div class="row2">
+                  <b>Description</b>
+                  <p> {{event.eventDescription}}</p>
+               </div>
+               <div class="row1">
+                  
+                  <span>
+                     Date: {{event.eventDateTime | slice: 0:10}}
+                  </span>
+                  <span>
+                    Time: {{event.eventDateTime | slice: 11}}
+                  </span>
+                  
+                  <button  (click)="openFile(event.eventID)" class="filebtn">
+                     
+                     <mat-icon>open_in_new</mat-icon>See File
+                     
+                  </button>
+               
+
+                  
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+</div>

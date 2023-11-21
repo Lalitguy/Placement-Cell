@@ -1,0 +1,53 @@
+@import 'src/styles.scss';
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+ul li {
+    list-style: none;
+}
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+.user {
+  font-size: 14px;
+  @include md {
+    font-size: 10px;
+}
+}
+mat-toolbar {
+  background: #f7f7f7;
+}
+.user-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  @include md {
+    width: 30px;
+    height: 30px;
+}
+}
+.user-image-icon {
+    height: 23px;
+    font-size: 1.5rem;
+    @include md {
+      font-size: 12px;
+      height: 15px;
+  }
+}
+
+::ng-deep .mat-menu-content {
+    width: 160px;
+}
+
+span{
+  font-size: 1.3rem;
+  @include md {
+    font-size: 0.7rem;
+}
+}

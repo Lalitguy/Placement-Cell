@@ -1,0 +1,61 @@
+<div class="container-fluid page">
+   <div class="d-flex page__box p-3 mt-2">
+      All Events
+   </div>
+   <div class="page__content shadow position-relative">
+      <div class="page__content-data position-relative ">
+         <!--<ng-container *ngIf="getFileUrl('1.jpg') | async as imageUrl">
+                  <img [src]="imageUrl" alt="none found">
+               </ng-container>-->
+
+
+
+
+
+
+         <div *ngFor="let event of eventsFeed " class="eventsFeed mt-5 eventdiv">
+            <div class="mt-3 row1">
+               <span class="eventHead"><b> {{ event.eventHeading }} </b></span>
+               <button  (click)="openCalendar(event.eventDateTime, event.eventDescription)" class="calendarbtn">
+                  <mat-icon>today</mat-icon>Calendar</button>
+            </div>
+            <div class="row1">
+               <span>[ {{event.eventType}} ]
+               </span>
+               <span>
+                  <b>ID: </b>{{event.eventID}}
+               </span>
+            </div>
+
+            <div class="row2 p-2">
+               <b>Description</b>
+               <p > {{event.eventDescription}}</p>
+            </div>
+            <div class="row1">
+
+               <span>
+                  Date: {{event.eventDateTime | slice: 0:10}}
+               </span>
+               <span>
+                  Time: {{event.eventDateTime | slice: 11}}
+               </span>
+
+               <button (click)="openFile(event.eventID)" class="filebtn">
+
+                  <mat-icon>open_in_new</mat-icon>See File
+
+               </button>
+
+
+
+            </div>
+            <div class="row1">
+               <button type="submit" class="btn addbtn to schedule"
+                  (click)="setToSchedule(event.eventID, event.eventHeading, event.eventDescription, event.eventType, event.eventDateTime)">
+                  Add To Schedule  </button>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>

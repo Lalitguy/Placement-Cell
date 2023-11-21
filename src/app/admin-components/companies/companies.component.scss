@@ -1,0 +1,234 @@
+@import 'src/styles.scss';
+
+.page {
+   color: white;
+   padding: 0 1rem;
+   background: #f1f5f9;
+   @include md {
+      width : 100vw;
+   }
+}
+.page__box {
+   min-height: 120px;
+   background: #49215a;
+   margin: 0 -1rem;
+   font-size: 36px;
+   @include md {
+      font-size: 26px;
+   }
+}
+.page__content {
+   //min-height: calc(100vh - 178px);
+   min-height: auto;
+   border-radius: 10px;
+   margin-top: -2rem;
+   background: white;
+   color: black;
+   font-size: 1.5rem;
+   display: flex;
+   justify-content: center;
+   padding: 1rem;
+   @include md {
+      font-size: 1rem;
+      padding: 0;
+   }
+}
+.page__content-data {
+   padding: 10px;
+   padding-top: 50px;
+   overflow-y: scroll;
+   padding-left: 10px;
+   width: auto;
+}
+
+.companyDiv {
+   display:flex;
+   flex-direction: column;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+   width: 75vw;
+   padding: 30px;
+   margin-bottom: 25px;
+   background-color: #f4ddfe;
+   border: 2px solid black;
+   border-radius: 10px;
+   @include md{
+      width: 85vw;
+      margin-bottom: 15px;
+   }
+}
+
+.row1 {
+   display: flex;
+   justify-content: space-between;
+}
+.heading{
+   background-color: #cf97e7;
+   border: 1px solid black;
+   border-radius: 7px;
+   padding: 3px 10px;
+   font-size: 33px;
+   display: flex;
+   justify-content: center;
+   font-weight: 500;
+   @include md{
+      font-size: 24px;
+   }
+   &:hover{
+      border: 3px solid black;
+      padding: 0 7px;
+   }
+}
+.row2 {
+   display: flex;
+   justify-content: space-between;
+   & span{
+      display: flex;
+      width:50%;
+      align-items: center;
+      font-size: 24px;
+      @include md{
+         font-size: 16px;
+         width: 80%;
+      }
+      & mat-icon{
+         margin-right: 3px;
+         @include lg{
+            &:hover{
+            
+               scale: 1.1;
+            }
+         }
+
+      }
+   }
+
+   @include md {
+      flex-direction: column;
+      flex-direction: flex-start;
+      min-width:80%;
+      max-width: 98%;
+      &span{
+         min-width:50%;
+      }
+   }
+}
+.row3{
+   align-items: left;
+   font-size: smaller;
+   & span{
+      width:35vw;
+   }
+   @include md {
+      &span{
+         width: 35vw;
+      }
+   }
+
+}
+.col1 {
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   align-items: self-start;
+   min-width: 45%;
+   @include md{
+      width: 97%;
+   }
+}
+span{
+   text-align: left;
+}
+.desc{
+   min-width:55%;
+   display: flex;
+   min-height: 100%;
+   border: 1px solid black;
+   border-radius: 5px;
+   align-items: center;
+   background-color: rgb(241, 222, 246);
+   padding: 5px;
+   @include md{
+      min-width: 65%;
+   }
+   & p{
+      text-align: justify;
+      align-self: flex-start;
+      padding:7px;
+   }
+   flex-direction: column;
+   @include md{
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
+      min-height: 100px;
+   }
+}
+b{
+   font-weight: 500;
+   margin-right: 5px;
+   font-size: 27px;
+   @include md{
+      font-size: 18px;
+   }
+}
+.bg{
+   background-color: rgb(255, 248, 255);
+   border-radius: 5px;
+   margin: 10px;
+   border: 1px ridge grey;
+   font-size: larger;
+   @include md{
+      width: 60vw;
+   }
+}
+button{
+   display: flex;
+   align-items: center;
+}
+
+.calenderbtn{
+   background-color: rgb(212, 249, 212);
+   border: 1px solid rgb(79, 85, 79);
+   padding: 3px 10px 3px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   
+   &:hover{
+      scale: 1.1;
+   }
+}
+.filebtn{
+   background-color: rgb(121, 175, 184);
+   border: 3px solid black;
+   border-top: 1px;
+   border-left: 1px ;
+   padding: 3px 10px 3px 10px;
+   border-radius: 5px;
+   margin: 3px ;
+   cursor: pointer;
+   &:hover{
+      scale: 1.1;
+   }
+}
+.deletebtn{
+   background-color: rgb(255, 99, 99);
+   border: 3px solid black;
+   border-top: 1px;
+   border-left: 1px ;
+   padding: 3px 10px 3px 10px;
+   border-radius: 5px;
+   margin: 3px ;
+   cursor: pointer;
+   &:hover{
+      scale: 1.1;
+   }
+}
+.morebtn{
+   background-color: #f0e6f0;
+   padding: 3px 10px 3px 10px;
+   border: 3px solid grey;
+   cursor: pointer;
+   &:hover{
+      scale: 1.1;
+   }
+}

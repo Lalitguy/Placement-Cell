@@ -1,8 +1,13 @@
 # Placement Cell
 
-A full stack project based on angular framework. This training and placement Cell is a interactive platform with both admin and student dashboards and their corresponding actions. The project uses firebase as backend.
+A full stack project based on angular framework. This training and placement Cell is a interactive platform with both admin and student dashboards and their corresponding actions. The project uses Firebase and backend and provides a real-time retrieval and update mechanism for effective events and company-applications management.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+
+## Installing Node Modules & Angular/cli
+
+Run 'npm i -g @angular/cli' for installing angular/cli.
+Run 'npm i' for installing node_modules.
 
 ## Development server
 
